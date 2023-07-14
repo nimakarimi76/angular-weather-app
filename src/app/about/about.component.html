@@ -1,0 +1,29 @@
+<h2
+  [style.backgroundColor]="'rgb(0,0,0)'"
+  style="color: white; font-size: 3rem; width: fit-content"
+  class=""
+>
+  About Us
+</h2>
+I am the parent but the child is the box bell
+
+<button class="toggle-the-child" (click)="handleShowChild($event)">
+  {{ toggleButton }}
+</button>
+
+<app-about-child
+  *ngIf="showChild"
+  [childMessage]="'HELLO'"
+  anotherMessage="without 2 qutation marks"
+  (messageEvent)="receiveMessage($event)"
+>
+  <h4 question>ng-content?</h4>
+  <p answer>yeah</p>
+</app-about-child>
+
+<p>
+  but I receive the msg in the parent:
+  {{ clickedMessages.length }}
+</p>
+
+{{ todaysDate | date }}
